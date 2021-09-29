@@ -16,7 +16,7 @@
             String nombre = request.getParameter("txtNombre");
             String tipoid = request.getParameter("selTipoid");
             String id = request.getParameter("txtId");
-            out.println("Id: "+id+" - Nombre"+nombre+" - Tipo: "+tipoid);
+            out.println("Id: "+id+" - Nombre: "+nombre+" - Tipo: "+tipoid);
             
             
         %>

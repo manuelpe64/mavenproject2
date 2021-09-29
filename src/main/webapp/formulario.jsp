@@ -4,7 +4,7 @@
     Author     : Ing Juan Manuel
 --%>
 
-<%@page import="com.mycompany.mavenproject2.Usuario"%>
+<%@page import="logica.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
