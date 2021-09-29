@@ -1,17 +1,24 @@
+
+-- Crear base de datos
+
 CREATE SCHEMA `dbusuarios` ;
 
-CREATE TABLE `dbusuarios`.`usuarios` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(60) NOT NULL,
-  `tipoid` VARCHAR(45) NOT NULL,
-  `identificacion` INT NOT NULL,
-  `email` VARCHAR(60) NOT NULL,
-  `direccion` VARCHAR(100) NOT NULL,
-  `contraseña` VARCHAR(45) NOT NULL,
-  `producto` VARCHAR(45) NOT NULL,
-  `aceptaterminos` TINYINT NOT NULL DEFAULT 1,
-  `activo` TINYINT NOT NULL DEFAULT 1,
-  PRIMARY KEY (`id`));
+-- Crear tabla
+
+CREATE TABLE `usuarios` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(60) NOT NULL,
+  `tipoid` varchar(45) NOT NULL,
+  `identificacion` int NOT NULL DEFAULT '0',
+  `email` varchar(60) NOT NULL,
+  `direccion` varchar(100) NOT NULL,
+  `contraseña` varchar(45) NOT NULL,
+  `producto` varchar(45) NOT NULL,
+  `aceptaterminos` tinyint NOT NULL DEFAULT '1',
+  `activo` tinyint NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 
 -- consultar datos
 SELECT * FROM dbusuarios.usuarios;
