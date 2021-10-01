@@ -7,17 +7,18 @@ CREATE SCHEMA `dbusuarios` ;
 
 CREATE TABLE `usuarios` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(60) NOT NULL,
-  `tipoid` varchar(45) NOT NULL,
+  `nombre` varchar(60) DEFAULT NULL,
+  `tipoid` varchar(45) DEFAULT NULL,
   `identificacion` int NOT NULL DEFAULT '0',
-  `email` varchar(60) NOT NULL,
-  `direccion` varchar(100) NOT NULL,
-  `contraseña` varchar(45) NOT NULL,
-  `producto` varchar(45) NOT NULL,
+  `email` varchar(60) DEFAULT NULL,
+  `direccion` varchar(100) DEFAULT NULL,
+  `contraseña` varchar(45) DEFAULT NULL,
+  `producto` varchar(45) DEFAULT NULL,
   `aceptaterminos` tinyint NOT NULL DEFAULT '1',
   `activo` tinyint NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 
 
 -- consultar datos
