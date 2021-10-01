@@ -18,12 +18,6 @@
         <h1 class="mb-3">Formulario Solicitud de Producto</h1>
         <hr>
         <form method="post" action="formulario_controlador.jsp">
-            <%
-               Usuario u = new Usuario();
-               u.setNombre("Juan");
-               u.setId(12);
-               
-            %>
             
             <div class="mb-3">
                 <label for="exampleFormControlInput2" class="form-label">Nombre</label>
@@ -34,11 +28,11 @@
                 <label for="Producto" class="form-label">Tipo de Identificación</label>
                 <select id= "selTipoid" class="form-select" name="selTipoid">
                 <option selected disabled value="">Seleccione...</option>
-                <option value="Producto 1">Carné diplomatico</option>   
-                <option value="Producto 2">Cédula Ciudadania</option>
-                <option value="Producto 2">Cédula de Extranjería</option>
-                <option value="Producto 2">NIT</option>
-                <option value="Producto 2">Pasaporte</option>
+                <option value="Carné diplomatico">Carné diplomatico</option>   
+                <option value="Cédula Ciudadania">Cédula Ciudadania</option>
+                <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+                <option value="NIT">NIT</option>
+                <option value="Pasaporte">Pasaporte</option>
                 </select>
             </div>
             <div class="mb-3">
@@ -51,11 +45,11 @@
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput4" class="form-label">Dirección</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" value="">
+                <input type="text" class="form-control" id="txtDireccion" name="txtDireccion" value="">
             </div>
             
             <label for="inputPassword5" class="form-label">Contraseña</label>
-            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+            <input type="password" id="txtcontraseña" class="form-control" name="txtcontraseña" aria-describedby="passwordHelpBlock">
             <div id="passwordHelpBlock" class="form-text">
               Su contraseña debe contener entre 8-20 caracteres de longitud, contener letras y numeros, no debe contener espacios ni caracteres especiales.
             </div>
@@ -68,7 +62,7 @@
             
             <div class="mb-3">
                 <label for="Producto" class="form-label">Producto a solicitar</label>
-                <select id="Producto a solicitar" class="form-select">
+                <select id="selTipoproducto" class="form-select" name="selTipoproducto">
                 <option selected disabled value="">Seleccione...</option>
                 <option value="Producto 1">Producto 1</option>   
                 <option value="Producto 2">Producto 2</option>   
@@ -82,7 +76,7 @@
                 </label>
             </div>
             
-            <button type="submit" class="btn btn-primary">Solicitar</button>
+            <button type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit" value="nuevo" >Solicitar</button>
             <button type="submit" class="btn btn-secondary">Cancelar</button>
         </form>
         </div>

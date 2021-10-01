@@ -20,7 +20,7 @@ public class ColeccionUsuarios {
         return lista;
     }
     
-    public boolean cargarUsuarios(){
+    /*public boolean cargarUsuarios(){
         UsuarioDAO dao = new UsuarioDAO();
         lista = dao.consultarUsuario();
         if (lista.size()>0){
@@ -30,6 +30,24 @@ public class ColeccionUsuarios {
         else {
             return false;
         }
-    }
-    
+    }*/
+    public boolean guardarUsuario(Usuario j) {
+        UsuarioDAO dao = new UsuarioDAO();
+        if (j.getId() == 0) {
+            int id = dao.guardarNuevoUsuario(j);
+            if (id > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        else {
+            int filas = dao.guardarUsuarioExistente(j);
+            if (filas == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }  
 }

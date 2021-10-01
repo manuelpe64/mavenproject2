@@ -29,8 +29,9 @@ public class Usuario {
         this.contraseña = "";
     }
          
-    public Usuario(int id, String nombre, String tipoid, int identificacion, String email, String direccion, String contraseña, String producto) {
-        this.id = id;
+    public Usuario(String nombre, String tipoid, int identificacion, String email, String direccion, String contraseña, String producto) {
+        
+        this.id=0;
         this.nombre = nombre;
         this.tipoid = tipoid;
         this.identificacion = identificacion;
@@ -72,12 +73,12 @@ public class Usuario {
         this.direccion = direccion;
     }
 
-    public String getProducto_a_solicitar() {
+    public String getProducto() {
         return producto;
     }
 
-    public void setProducto_a_solicitar(String producto_a_solicitar) {
-        this.producto = producto_a_solicitar;
+    public void setProducto(String producto) {
+        this.producto = producto;
     }
     
     public String getTipoid() {

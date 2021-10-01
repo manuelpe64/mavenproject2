@@ -59,12 +59,11 @@ public class ConexionBD {
     }
     
     
-    public ResultSet ejecutarUpdate(String sql)
-    {
+        public ResultSet ejecutarInsert(String sql) {
         ResultSet rs = null;
         try
         {
-            int cant = ejecutor.executeUpdate(sql);
+            int cant = ejecutor.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
             if (cant > 0) {
                 rs = ejecutor.getGeneratedKeys();
             }
@@ -74,6 +73,24 @@ public class ConexionBD {
             e.printStackTrace();
         }
         return rs;
+    }
+    
+    /**
+     * Ejecuta una sentencia SQL de modificación
+     * @param sql la consulta SQL que se arma para modificar un registro
+     * @return la cantidad de registros que se han modificado
+     */
+    public int ejecutarUpdate(String sql) {
+        int cant = 0;
+        try
+        {
+            cant = ejecutor.executeUpdate(sql);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return cant;
     }
     
     public void desconectar()

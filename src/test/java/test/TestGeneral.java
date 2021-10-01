@@ -25,10 +25,10 @@ public class TestGeneral {
         Assert.assertFalse(con.isConectado(),"No se cerró conexión. ");
     }
     
-    @Test
+    /*@Test
     public void verificarCargaJugutes(){
         UsuarioDAO dao = new UsuarioDAO();
         Assert.assertTrue(dao.consultarUsuario().size()>0, "No se cargaron datos. ");
-    }
+    }*/
     
 }

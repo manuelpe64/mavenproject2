@@ -31,7 +31,7 @@ public class UsuarioDAO {
                 String direccion = rs.getString("direccion");
                 String contraseña = rs.getString("contraseña");
                 String producto = rs.getString("producto");
-                Usuario j = new Usuario(id,nombre,tipoid,identificacion,email,direccion,contraseña,producto);
+                Usuario j = new Usuario(nombre,tipoid,identificacion,email,direccion,contraseña,producto);
                 lista.add(j);
             }
         } catch (SQLException ex) {
@@ -39,5 +39,47 @@ public class UsuarioDAO {
         }
         return lista;
     }
+    public int guardarNuevoUsuario(Usuario j) {
+        ConexionBD con = new ConexionBD();
+        String nombre = j.getNombre();
+        String tipoid = j.getTipoid();
+        int identificacion = j.getIdentificacion();
+        String email = j.getEmail();
+        String direccion = j.getDireccion();
+        String contraseña = j.getContraseña();
+        String producto = j.getProducto();
         
+        String sql = "INSERT INTO usuarios (nombre, tipoid,identificacion,email,direccion,contraseña,producto) "+
+                     "VALUES ('"+nombre+"', '"+tipoid+"', '"+identificacion+"', '"+email+"', '"+direccion+"', '"+contraseña+"', '"+producto+"') ";
+        ResultSet rs = con.ejecutarInsert(sql);
+        int id = 0;
+        try {
+            if (rs.next()){
+                id = rs.getInt(1);
+            }
+        } catch (SQLException ex) {
+            con.desconectar();
+            return 0; 
+        }
+        con.desconectar();
+        return id;
+    }
+    public int guardarUsuarioExistente(Usuario j) {
+        ConexionBD con = new ConexionBD();
+        int id = j.getId();
+        String nombre = j.getNombre();
+        String tipoid = j.getTipoid();
+        int identificacion = j.getIdentificacion();
+        String email = j.getEmail();
+        String direccion = j.getDireccion();
+        String contraseña = j.getContraseña();
+        String producto = j.getProducto();
+        
+        String sql = "UPDATE usuarios "+
+                     "SET nombre = '" + nombre + "' , tipoid = " + tipoid + " , identificacion = '" + identificacion + "', email = " + email + ", direccion = '" + direccion + ", contraseña = '" + contraseña + ", producto = '" + producto + "' " + 
+                     "WHERE id = " + id + " ";
+        int filas = con.ejecutarUpdate(sql);
+        con.desconectar();
+        return filas;
+    }    
 }
