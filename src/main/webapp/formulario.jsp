@@ -83,6 +83,7 @@
             
             <button type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit" value="nuevo" >Solicitar</button>
             <button type="submit" class="btn btn-secondary">Cancelar</button>
+            
         </form>
         </div>
     </body>
