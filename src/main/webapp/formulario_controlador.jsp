@@ -16,9 +16,10 @@
     </head>
     <body>
         <div class="container mt-5">
-        <h1 class="mb-3">Usuario creado exitosamente</h1>
-        <form method="post" action="formulario.jsp" class="needs-validation" novalidate>
+        <h1 class="mb-3">Solicitud de creacion de usuario</h1>
+        <form method="post" action="usuarios_lista.jsp">
         <%
+            
             
             String nombre = request.getParameter("txtNombre");
             String tipoid = request.getParameter("selTipoid");
@@ -35,9 +36,13 @@
             out.println("Usuario ID ES : "+tipoid);*/
                        
             if (accion.equals("nuevo")) {
+                int id=0;
                 j = new Usuario(nombre, tipoid, identificacion, email, direccion, contraseña, producto);
             }
-            
+            else if (accion.equals("editar")){
+                int id = Integer.parseInt(request.getParameter("txtIdBD"));
+                j = new Usuario(id,nombre, tipoid, identificacion, email, direccion, contraseña, producto);
+            }            
             ColeccionUsuarios logicaUsuarios = new ColeccionUsuarios();
             boolean guardado = logicaUsuarios.guardarUsuario(j);
             if (guardado == true) {
@@ -49,7 +54,7 @@
             
         %>
         
-        <button type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit" value="nuevo" >Regresar a registro</button>
+        <button type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit" value="nuevo" >Regresar a la lista</button>
         </form>
         </div>
         

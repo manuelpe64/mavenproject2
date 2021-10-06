@@ -40,7 +40,19 @@ public class Usuario {
         this.contraseña = contraseña;
         this.producto = producto;
     }
-            
+
+    public Usuario(int id, String nombre, String tipoid, int identificacion, String email, String direccion, String contraseña, String producto) {
+        
+        this.id=id;
+        this.nombre = nombre;
+        this.tipoid = tipoid;
+        this.identificacion = identificacion;
+        this.email = email;
+        this.direccion = direccion;
+        this.contraseña = contraseña;
+        this.producto = producto;
+    }    
+    
     public String getNombre() {
         return nombre;
     }

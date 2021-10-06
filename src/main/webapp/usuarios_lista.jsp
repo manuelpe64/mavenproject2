@@ -30,7 +30,7 @@
                         <button type="submit" class="btn btn-light col-sm-1"><i class="bi bi-search"></i></button>                    
                     </div>
                 </form>
-                <a href="formulario.jsp" class="col-sm-2"><button type="submit" class="btn btn-primary" id="btnNuevo">Nuevo usuario</button></a>
+                <a href="formulario.jsp?accion=nuevo" class="col-sm-2"><button type="submit" class="btn btn-primary" id="btnNuevo">Nuevo usuario</button></a>
             </div>
             <form>
                 <table class="table">
@@ -70,8 +70,8 @@
                             <td><%= j.getEmail()%></td>
                             <td><%= j.getProducto()%></td>
                             <td>
-                                <a href="usuarios_form.jsp?accion=editar&id=<%= j.getId() %>"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
-                                <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                                <a href="formulario.jsp?accion=editar&id=<%= j.getId() %>"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
+                                <a href="eliminar_usuario.jsp"><button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button></a>
                             </td>
                         </tr>
                         <% } %>
