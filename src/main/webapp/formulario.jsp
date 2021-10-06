@@ -17,16 +17,18 @@
         <div class="container mt-5">
         <h1 class="mb-3">Formulario Solicitud de Producto</h1>
         <hr>
-        <form method="post" action="formulario_controlador.jsp">
+        <form method="post" action="formulario_controlador.jsp" class="needs-validation" novalidate>
             
             <div class="mb-3">
                 <label for="exampleFormControlInput2" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="txtNombre" name="txtNombre" value="">
+                <input type="text" class="form-control" id="txtNombre" name="txtNombre" value="" required>
+                <div class="valid-feedback">Ok válido</div>
+                <div class="invalid-feedback">Complete el campo</div>
             </div>
             
             <div class="mb-3">
                 <label for="Producto" class="form-label">Tipo de Identificación</label>
-                <select id= "selTipoid" class="form-select" name="selTipoid">
+                <select id= "selTipoid" class="form-select" name="selTipoid" required>
                 <option selected disabled value="">Seleccione...</option>
                 <option value="Carné diplomatico">Carné diplomatico</option>   
                 <option value="Cédula Ciudadania">Cédula Ciudadania</option>
@@ -70,10 +72,13 @@
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
                 <label class="form-check-label" for="flexCheckDefault">
                   Acepto terminos y condiciones
                 </label>
+                 <div class="invalid-feedback">
+                    You must agree before submitting.
+                 </div>
             </div>
             
             <button type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit" value="nuevo" >Solicitar</button>

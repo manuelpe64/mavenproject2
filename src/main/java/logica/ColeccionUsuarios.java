@@ -20,7 +20,7 @@ public class ColeccionUsuarios {
         return lista;
     }
     
-    /*public boolean cargarUsuarios(){
+    public boolean cargarUsuarios(){
         UsuarioDAO dao = new UsuarioDAO();
         lista = dao.consultarUsuario();
         if (lista.size()>0){
@@ -30,7 +30,8 @@ public class ColeccionUsuarios {
         else {
             return false;
         }
-    }*/
+    }
+    
     public boolean guardarUsuario(Usuario j) {
         UsuarioDAO dao = new UsuarioDAO();
         if (j.getId() == 0) {

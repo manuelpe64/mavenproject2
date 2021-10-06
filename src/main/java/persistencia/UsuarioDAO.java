@@ -39,6 +39,7 @@ public class UsuarioDAO {
         }
         return lista;
     }
+    
     public int guardarNuevoUsuario(Usuario j) {
         ConexionBD con = new ConexionBD();
         String nombre = j.getNombre();

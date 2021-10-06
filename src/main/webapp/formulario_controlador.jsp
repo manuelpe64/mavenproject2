@@ -17,6 +17,7 @@
     <body>
         <div class="container mt-5">
         <h1 class="mb-3">Usuario creado exitosamente</h1>
+        <form method="post" action="formulario.jsp" class="needs-validation" novalidate>
         <%
             
             String nombre = request.getParameter("txtNombre");
@@ -47,6 +48,10 @@
             
             
         %>
+        
+        <button type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit" value="nuevo" >Regresar a registro</button>
+        </form>
         </div>
-    </body>
+        
+        </body>
 </html>
