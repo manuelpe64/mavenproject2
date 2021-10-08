@@ -16,21 +16,21 @@
         <title>Lista de usuarios</title>
     </head>
     <body>
-     <div class="container mt-5"> 
+     <div class="container mt-5" > 
             <h3 class="mb-3">Lista de usuarios</h3>
             <hr>
             <%
                 String filtro = (request.getParameter("txtFiltro") == null) ? "" : request.getParameter("txtFiltro");
             %>
             <div class="row">
-                <form method="GET" class="col-sm-10">
+                <%--<form method="GET" class="col-sm-10">
                     <div class="row mb-3">
                         <label for="txt1" class="col-form-label col-sm-2">Filtrar</label>
                         <input type="text" class="col-form-control col-sm-9" id="txtFiltro" name="txtFiltro" value="<%= filtro %>" placeholder="por nombre, tipo ID, producto o ID">
                         <button type="submit" class="btn btn-light col-sm-1"><i class="bi bi-search"></i></button>                    
                     </div>
-                </form>
-                <a href="formulario.jsp?accion=nuevo" class="col-sm-2"><button type="submit" class="btn btn-primary" id="btnNuevo">Nuevo usuario</button></a>
+                </form>--%>
+                <a href="formulario.jsp?accion=nuevo" class="col-sm-2"><button type="submit" class="btn btn-info" id="btnNuevo">Nuevo usuario</button></a>
             </div>
             <form>
                 <table class="table">
@@ -71,7 +71,7 @@
                             <td><%= j.getProducto()%></td>
                             <td>
                                 <a href="formulario.jsp?accion=editar&id=<%= j.getId() %>"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
-                                <a href="eliminar_usuario.jsp"><button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button></a>
+                                <a href="eliminar_usuario.jsp?idDB=<%= j.getId() %>"><button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button></a>
                             </td>
                         </tr>
                         <% } %>

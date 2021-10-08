@@ -15,7 +15,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <div class="container mt-5">
+        <div class="container mt-5 bg-secondary text-white">
         <h1 class="mb-3">Formulario Solicitud de Producto</h1>
         <hr>
           <%
@@ -121,7 +121,7 @@
             
             
         </form>
-            <a href="usuarios_lista.jsp" class="col-sm-2"><button type="submit" class="btn btn-secundary" id="btnNuevo">Cancelar</button></a>
+            <a href="usuarios_lista.jsp" class="col-sm-2"><button type="submit" class="btn btn-danger" id="btnNuevo">Cancelar</button></a>
         </div>
     </body>
 </html>
