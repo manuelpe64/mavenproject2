@@ -21,7 +21,7 @@
             <%
               
                 int idDB = Integer.parseInt(request.getParameter("idDB"));
-                out.println("Id Usuario eliminado "+ idDB);
+                out.println("Usuario eliminado con el ID N° "+ idDB);
                 ConexionBD con = new ConexionBD();
                         String sql = "UPDATE usuarios "+
                                      "SET activo = 0 " + 
